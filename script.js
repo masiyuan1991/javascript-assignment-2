@@ -24,13 +24,28 @@ if (201 <= n && n <= 300) {
     color = "blue";
 }
 
-function boxiClicked(){
-    boxes[i].style.backgroundColor = color;
+
+for (var i=0; i<n; i++){
+    (function(i){
+        boxes[i].onclick = function(){
+            boxes[i].style.backgroundColor = color;
+             if(boxes[i].className == "box"){
+        boxes[i].className = "clicked";
+            } else {
+                boxes[i].className == "box";
+            }
+
+        }
+    })(i)
 }
 
-for (var i=0; i < boxes.length; i++) {
-    boxes[i].addEventListener("click", boxiClicked);
-}
+// function boxiClicked(){
+//     boxes[i].style.backgroundColor = color;
+// }
+
+// for (var i=0; i < boxes.length; i++) {
+//     boxes[i].addEventListener("click", boxiClicked);
+// }
 
 
     
